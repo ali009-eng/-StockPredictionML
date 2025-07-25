@@ -33,7 +33,7 @@ TEMPLATE = """
 </head>
 <body>
   <div class="card">
-    <h2 class="mb-4 text-center">📈 Stock Price Predictor</h2>
+    <h2 class="mb-4 text-center">Stock Price Predictor</h2>
     <form method="post">
       <div class="mb-3">
         <label for="stock" class="form-label">Select Stock</label>
@@ -51,11 +51,11 @@ TEMPLATE = """
     </form>
     {% if prediction %}
     <div class="alert alert-success mt-4 text-center" role="alert">
-      📊 Predicted Price: <strong>${{ prediction }}</strong>
+       Predicted Price: <strong>${{ prediction }}</strong>
     </div>
     {% elif error %}
     <div class="alert alert-danger mt-4 text-center" role="alert">
-      ⚠️ {{ error }}
+       {{ error }}
     </div>
     {% endif %}
   </div>
@@ -82,7 +82,7 @@ def home():
                 future_date = datetime.date.today() + datetime.timedelta(days=days)
                 ordinal = future_date.toordinal()
                 predicted = model.predict([[ordinal]])[0]
-                prediction = round(float(predicted), 2)  # ✅ Convert to float, then round
+                prediction = round(float(predicted), 2)  # Convert to float, then round
             except Exception as e:
                 error = f"Prediction failed: {e}"
     
