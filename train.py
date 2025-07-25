@@ -18,7 +18,7 @@ def date_to_ordinal(dates):
     return np.array([d.toordinal() for d in dates]).reshape(-1, 1)
 
 def train_model_for(stock):
-    print(f"📊 Training model for {stock}...")
+    print(f" Training model for {stock}...")
 
     if use_real_data:
         data = yf.download(stock, period="90d")
