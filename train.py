@@ -9,7 +9,7 @@ try:
     import yfinance as yf
     use_real_data = True
 except ImportError:
-    print("⚠️ yfinance not installed. Using synthetic data.")
+    print(" yfinance not installed. Using synthetic data.")
     use_real_data = False
 
 STOCKS = ["AAPL", "GOOG", "MSFT", "AMZN", "TSLA"]
@@ -38,7 +38,7 @@ def train_model_for(stock):
     model.fit(X, y)
 
     joblib.dump(model, f"{stock}_model.pkl")
-    print(f"✅ Saved model as {stock}_model.pkl")
+    print(f" Saved model as {stock}_model.pkl")
 
 if __name__ == "__main__":
     for stock in STOCKS:
