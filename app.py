@@ -82,7 +82,7 @@ def home():
                 future_date = datetime.date.today() + datetime.timedelta(days=days)
                 ordinal = future_date.toordinal()
                 predicted = model.predict([[ordinal]])[0]
-                prediction = round(float(predicted), 2)  # ✅ Convert to float, then round
+                prediction = round(float(predicted), 2)  #  Convert to float, then round
             except Exception as e:
                 error = f"Prediction failed: {e}"
     
